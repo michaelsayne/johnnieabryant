@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Johnnie A. Bryant | Counseling Support</title>
+  <meta name="description" content="Informational site for counseling support, free client openings, location, services, and contact information." />
+
+  <style>
+    /* site colors */
+    :root {
+      --bg:   #f7f4ef;
+      --card: #ffffff;
+      --text:  #1f2933;
+      --muted:#5b6673;
+      --accent: #48695c;
+      --accent-dark:  #31483f;
+      --border: #ddd6cc;
+      --soft:  #efe8dd;
+    }
+
+    /* basic reset */
+    * {
+      box-sizing: border-box;
+      margin:0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration:none;
+    }
+
+
+
+    header {
+      background: rgba(247, 244, 239, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width:1120px;
+      margin: 0 auto;
+      padding:18px 22px;
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size:1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap:22px;
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+    }
+
+    .hero {
+      max-width: 1120px;
+      margin:0 auto;
+      padding: 88px 22px 70px;
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+
+    /* main headline */
+    h1 {
+      font-size:clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin-bottom:24px;
+      color: #172018;
+    }
+
+    .hero p {
+      font-size: 1.18rem;
+      color: var(--muted);
+      max-width:680px;
+      margin-bottom: 30px;
+    }
+
+    .button-row {
+      display:flex;
+      flex-wrap: wrap;
+      gap:14px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display:inline-block;
+      padding: 14px 22px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--accent);
+      color: var(--accent-dark);
+      background: transparent;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border:1px solid var(--border);
+      padding: 30px;
+    }
+
+    .hero-card h2 {
+      font-size: 1.65rem;
+      margin-bottom: 14px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .hero-card li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .hero-card li:last-child {
+      border-bottom: none;
+    }
+
+    section { padding:70px 22px; }
+
+    .wrap {
+      max-width: 1120px;
+      margin:0 auto;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid-3 {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding:26px;
+      min-height: 100%;
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      color: #172018;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.96rem;
+    }
+
+    .card ul {
+      margin-left: 18px;
+      margin-top: 12px;
+    }
+
+    .soft-section {
+      background:var(--soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .statement {
+      background: var(--accent-dark);
+      color:white;
+      padding:42px;
+    }
+
+    .statement h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .statement p {
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 1.08rem;
+      max-width: 860px;
+    }
+
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 34px;
+      display:grid;
+      grid-template-columns:0.9fr 1.1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .contact-methods {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+    }
+
+    .contact-methods div {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-methods div:last-child {
+      border-bottom: none;
+    }
+
+    form {
+      display: grid;
+      gap:14px;
+    }
+
+    label {
+      font-family: Arial, sans-serif;
+      font-weight:700;
+      color: #26332e;
+      font-size: 0.9rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding:13px 14px;
+      border: 1px solid var(--border);
+      background: #fbfaf7;
+      font: inherit;
+      color: var(--text);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize:vertical;
+    }
+
+    .notice {
+      background: #fff7e8;
+      border: 1px solid #ead3a2;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      color: #66512a;
+      font-size: 0.92rem;
+      margin-top: 20px;
+    }
+
+
+    /* smaller screens */
+    @media (max-width: 820px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero,
+      .grid-2,
+      .grid-3,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .statement,
+      .contact-box,
+      .hero-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#home" class="brand">Johnnie A. Bryant</a>
+      <div class="nav-links">
+          <a href="#about">About</a>
+        <a href="#support">Free Support</a>
+          <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+       <div>
+        <h1>Johnnie A. Bryant</h1>
+        <p>
+          Johnnie A. Bryant is a licensed clinical social worker based in Manasquan, New Jersey, with experience supporting children, teens, adults, and older adults. His work focuses on concerns such as anxiety, depression, coping skills, stress, and life changes through in-person and online counseling.
+        </p>
+        <div class="button-row">
+          <a href="#contact" class="btn btn-primary">Request Support</a>
+          <a href="#support" class="btn btn-secondary">Free Client Info</a>
+        </div>
+      </div>
+
+
+      <aside class="hero-card">
+        <h2>Basic Information</h2>
+        <ul>
+            <li><strong>Focus:</strong> Anxiety, depression, coping skills, stress, life direction</li>
+          <li><strong>Format:</strong> In-person and online sessions</li>
+            <li><strong>Location:</strong> Manasquan, New Jersey</li>
+          <li><strong>Availability:</strong> Limited free support openings</li>
+            <li><strong>Contact:</strong> Phone or secure contact form</li>
+        </ul>
+      </aside>
+    </section>
+
+
+    <section id="about" class="soft-section">
+      <div class="wrap grid-2">
+        <div class="section-title">
+          <h2>About the Approach</h2>
+          <p>
+            The approach described on this site focuses on understanding a person’s concerns, identifying goals, and building practical coping skills. Sessions may include discussion, planning, reflection, and support based on the client’s needs.
+          </p>
+        </div>
+        <div class="card">
+          <h3>How sessions are approached</h3>
+          <p>
+            Sessions may include coping strategies, reflection, emotional processing, and goal-setting depending on each person’s needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="support">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Free Client Openings</h2>
+          <p>
+            A limited number of free support slots may be available. These openings are intended for people experiencing stress, anxiety, depression, grief, adjustment issues, or coping difficulties who may not currently be able to afford care.
+          </p>
+        </div>
+
+        <div class="grid-3">
+
+          <div class="card">
+            <h3>Who this may help</h3>
+            <ul>
+              <li>People feeling overwhelmed or stuck</li>
+              <li>People managing anxiety or sadness</li>
+              <li>People facing stress, loss, or transition</li>
+              <li>People who need emotional support and coping tools</li>
+            </ul>
+          </div>
+
+
+          <div class="card">
+            <h3>What to expect</h3>
+            <ul>
+              <li>A respectful first conversation</li>
+              <li>A discussion of your goals and concerns</li>
+              <li>Supportive care planning</li>
+              <li>Referral guidance if another service is a better fit</li>
+            </ul>
+          </div>
+
+
+          <div class="card">
+            <h3>Important limits</h3>
+            <ul>
+              <li>Free openings are limited</li>
+              <li>This is not emergency care</li>
+              <li>Availability is not guaranteed</li>
+              <li>Some needs may require specialized or higher-level care</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <section id="services" class="soft-section">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Areas of Support</h2>
+          <p>
+            These are common concerns that may be discussed in counseling.
+          </p>
+        </div>
+
+        <div class="grid-3">
+
+          <div class="card">
+            <h3>Anxiety & stress</h3>
+            <p>Support for worry, racing thoughts, pressure, avoidance, burnout, and feeling constantly on edge.</p>
+          </div>
+
+          <div class="card">
+            <h3>Depression & low mood</h3>
+            <p>Support for sadness, low motivation, isolation, hopelessness, and difficulty feeling like yourself.</p>
+          </div>
+
+          <div class="card">
+            <h3>Coping skills</h3>
+            <p>Practical tools for emotional regulation, decision-making, relationships, conflict, and daily challenges.</p>
+          </div>
+
+          <div class="card">
+            <h3>Life transitions</h3>
+            <p>Support during changes involving family, school, work, identity, relationships, grief, or direction in life.</p>
+          </div>
+
+          <div class="card">
+            <h3>Children, teens & adults</h3>
+            <p>Support may be available across age groups depending on fit, needs, consent, and clinical appropriateness.</p>
+          </div>
+
+          <div class="card">
+            <h3>Online & in person</h3>
+            <p>Sessions may be available through telehealth or in-person care in the Manasquan, New Jersey area.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap statement">
+        <h2>Next Steps</h2>
+        <p>
+          People interested in free support can use the contact form or phone number below. After contact is made, fit, availability, consent, and next steps can be discussed.
+        </p>
+      </div>
+    </section>
+
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>
+            Send a brief message with basic information about what kind of support you are looking for.
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <h3>Contact information</h3>
+            <div class="contact-methods">
+              <div><strong>Phone:</strong> <a href="tel:19083565559">(908) 356-5559</a></div>
+              <div><strong>Location:</strong> 1913 Atlantic Avenue, Suite 125, Manasquan, NJ 08736</div>
+              <div><strong>Format:</strong> Online and in-person availability</div>
+            </div>
+          </div>
+
+          <!-- contact form for the static page
+               swap the email before publishing -->
+          <form action="mailto:YOUR-EMAIL-HERE@example.com"
+                method="post" enctype="text/plain">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="Name"
+                     placeholder="Your name" required />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="Email" placeholder="you@example.com"
+                     required />
+            </div>
+
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="Phone" placeholder="Optional" />
+            </div>
+
+            <div>
+              <label for="format">Preferred format</label>
+              <select id="format" name="Preferred Format">
+                <option value="No preference">No preference</option>
+                <option value="Online">Online</option>
+                <option value="In person">In person</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">Brief message</label>
+              <textarea id="message" name="Message"
+                placeholder="Briefly share what kind of support you are looking for." required></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
